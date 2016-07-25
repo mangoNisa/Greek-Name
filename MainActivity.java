@@ -1,5 +1,6 @@
 package com.faintingdonkey.greekname;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tvName;
     EditText etName;
     Button btnGetName;
+    MediaPlayer mPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +43,16 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "I am the developer KINNNNNG", Toast.LENGTH_LONG).show();
                 }else if(etName.getText().toString().equals("Sexy Banana")){
                     Toast.makeText(getApplicationContext(), "Hey Sexy ;) you into bananas? I'll peel your skin off first.", Toast.LENGTH_LONG).show();
+                    MediaPlayer mPlayer = MediaPlayer.create(MainActivity.this, R.raw.banana);
                 }else if(etName.getText().toString().equals("Ryan Maloney")){
                     Toast.makeText(getApplicationContext(), "He is the african king", Toast.LENGTH_LONG).show();
+                    MediaPlayer mPlayer = MediaPlayer.create(MainActivity.this, R.raw.lion);
                 }else if(etName.getText().toString().equals("Gulan Insay")) {
-                    Toast.makeText(getApplicationContext(), "Glasgow is in ruins. This is a secret message. SAVE YOURSELF!1!>£3 >:(", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "EGGGG: Glasgow is in ruins. This is a secret message. SAVE YOURSELF!1!>£3 >:(", Toast.LENGTH_LONG).show();
+                    MediaPlayer mPlayer = MediaPlayer.create(MainActivity.this, R.raw.lion);
                 }
                 translate();
+                mPlayer.start();
             }
         });
     }
@@ -104,5 +110,16 @@ public class MainActivity extends AppCompatActivity {
         alphabet.put("z", new String[]{"ζ", "Ζ", "7"});
         alphabet.put("z", new String[]{" ", " ", "0"});
 
+    }
+
+    public void onDestroy() {
+        mPlayer.stop();
+        super.onDestroy();
+    }
+
+    @Override
+    public void onBackPressed() {
+        mPlayer.stop();
+        super.onBackPressed();
     }
 }
