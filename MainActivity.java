@@ -44,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Hey Sexy ;) you into bananas? I'll peel your skin off first.", Toast.LENGTH_LONG).show();
                 }else if(etName.getText().toString() == "Ryan Maloney"){
                     Toast.makeText(getApplicationContext(), "He is the african king", Toast.LENGTH_LONG).show();
-
+                }else if(etName.getText().toString() == "Gulan Insay") {
+                    Toast.makeText(getApplicationContext(), "Glasgow is in ruins. This is a secret message. SAVE YOURSELF!1!>£3 >:(", Toast.LENGTH_LONG).show();
                 }
                 translate();
             }
