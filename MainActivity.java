@@ -2,10 +2,12 @@ package com.faintingdonkey.greekname;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.HashMap;
 
@@ -34,14 +36,24 @@ public class MainActivity extends AppCompatActivity {
         btnGetName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(etName.getText().toString() == "Jennifer Gargett"){
+                    Toast.makeText(getApplicationContext(), "YO YO YO DIGGIE DE DIGGIE DAY, ALSO, TWINKLING MINT LEAF", Toast.LENGTH_LONG).show();
+                }else if(etName.getText().toString() == "Waqar-un-nisa Nabi"){
+                    Toast.makeText(getApplicationContext(), "I am the developer KINNNNNG", Toast.LENGTH_LONG).show();
+                }else if(etName.getText().toString() == "Sexy Banana"){
+                    Toast.makeText(getApplicationContext(), "Hey Sexy ;) you into bananas? I'll peel your skin off first.", Toast.LENGTH_LONG).show();
+                }else if(etName.getText().toString() == "Ryan Maloney"){
+                    Toast.makeText(getApplicationContext(), "He is the african king", Toast.LENGTH_LONG).show();
 
+                }
+                translate();
             }
         });
     }
 
     private void translate() {
-        String greekname = "";
-        int greeknumber = 0;
+        String greekName = "";
+        int greekNumber = 0;
 
         for(int i = 0; i < name.length(); i++){
             char letter = name.charAt(i);
@@ -51,10 +63,13 @@ public class MainActivity extends AppCompatActivity {
             }
             String l = Character.toString(Character.toLowerCase(letter));
 
-            greekname += alphabet.get(l)[index];
+            greekName += alphabet.get(l)[index];
 
-            greeknumber += Integer.parseInt(alphabet.get(l)[2]);
+            greekNumber += Integer.parseInt(alphabet.get(l)[2]);
         }
+
+        String text = "Greek Name: \n" + greekName + "\n \n" + "Greek Number: \n" + greekNumber;
+        tvName.setText(text);
     }
 
     /**
@@ -87,5 +102,7 @@ public class MainActivity extends AppCompatActivity {
         alphabet.put("x", new String[]{"ξ", "Ξ", ""});
         alphabet.put("y", new String[]{"ψ", "Ψ", ""});
         alphabet.put("z", new String[]{"ζ", "Ζ", ""});
+        alphabet.put("z", new String[]{" ", " ", "0"});
+
     }
 }
