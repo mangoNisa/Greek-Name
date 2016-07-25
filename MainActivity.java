@@ -2,7 +2,6 @@ package com.faintingdonkey.greekname;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,15 +35,15 @@ public class MainActivity extends AppCompatActivity {
         btnGetName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(etName.getText().toString() == "Jennifer Gargett"){
+                if(etName.getText().toString().equals("Jennifer Gargett")){
                     Toast.makeText(getApplicationContext(), "YO YO YO DIGGIE DE DIGGIE DAY, ALSO, TWINKLING MINT LEAF", Toast.LENGTH_LONG).show();
-                }else if(etName.getText().toString() == "Waqar-un-nisa Nabi"){
+                }else if(etName.getText().toString().equals("Waqar-un-nisa Nabi")){
                     Toast.makeText(getApplicationContext(), "I am the developer KINNNNNG", Toast.LENGTH_LONG).show();
-                }else if(etName.getText().toString() == "Sexy Banana"){
+                }else if(etName.getText().toString().equals("Sexy Banana")){
                     Toast.makeText(getApplicationContext(), "Hey Sexy ;) you into bananas? I'll peel your skin off first.", Toast.LENGTH_LONG).show();
-                }else if(etName.getText().toString() == "Ryan Maloney"){
+                }else if(etName.getText().toString().equals("Ryan Maloney")){
                     Toast.makeText(getApplicationContext(), "He is the african king", Toast.LENGTH_LONG).show();
-                }else if(etName.getText().toString() == "Gulan Insay") {
+                }else if(etName.getText().toString().equals("Gulan Insay")) {
                     Toast.makeText(getApplicationContext(), "Glasgow is in ruins. This is a secret message. SAVE YOURSELF!1!>£3 >:(", Toast.LENGTH_LONG).show();
                 }
                 translate();
