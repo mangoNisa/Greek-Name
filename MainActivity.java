@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     HashMap<String, String[]> alphabet = new HashMap<>();
     String name;
-    TextView tvName;
+    TextView tvName, tvNum, tvTitleName, tvTitleNum;
     EditText etName;
     Button btnGetName;
     MediaPlayer mPlayer;
@@ -31,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         etName = (EditText) findViewById(R.id.et_name);
+        tvTitleName = (TextView) findViewById(R.id.tv_titlename);
+        tvNum = (TextView) findViewById(R.id.tv_num);
+        tvTitleNum = (TextView) findViewById(R.id.tv_titlenum);
         tvName = (TextView) findViewById(R.id.tv_greekname);
         btnGetName = (Button) findViewById(R.id.btn_get_name);
 
@@ -46,13 +49,17 @@ public class MainActivity extends AppCompatActivity {
                     MediaPlayer mPlayer = MediaPlayer.create(MainActivity.this, R.raw.banana);
                 }else if(etName.getText().toString().equals("Ryan Maloney")){
                     Toast.makeText(getApplicationContext(), "He is the african king", Toast.LENGTH_LONG).show();
-                    MediaPlayer mPlayer = MediaPlayer.create(MainActivity.this, R.raw.lion);
+                    mPlayer = MediaPlayer.create(MainActivity.this, R.raw.lion);
+                    mPlayer.start();
                 }else if(etName.getText().toString().equals("Gulan Insay")) {
                     Toast.makeText(getApplicationContext(), "EGGGG: Glasgow is in ruins. This is a secret message. SAVE YOURSELF!1!>£3 >:(", Toast.LENGTH_LONG).show();
-                    MediaPlayer mPlayer = MediaPlayer.create(MainActivity.this, R.raw.lion);
+                    mPlayer = MediaPlayer.create(MainActivity.this, R.raw.lion);
+                    mPlayer.start();
                 }
+
+                name = etName.getText().toString();
+
                 translate();
-                mPlayer.start();
             }
         });
     }
@@ -67,15 +74,21 @@ public class MainActivity extends AppCompatActivity {
             if(Character.isUpperCase(letter)){
                 index = 1;
             }
-            String l = Character.toString(Character.toLowerCase(letter));
+            if(Character.isSpaceChar(letter)){
+                greekName += " ";
+            }else {
+                String l = Character.toString(Character.toLowerCase(letter));
 
-            greekName += alphabet.get(l)[index];
+                greekName += alphabet.get(l)[index];
 
-            greekNumber += Integer.parseInt(alphabet.get(l)[2]);
+                greekNumber += Integer.parseInt(alphabet.get(l)[2]);
+            }
         }
 
-        String text = "Greek Name: \n" + greekName + "\n \n" + "Greek Number: \n" + greekNumber;
-        tvName.setText(text);
+        tvTitleName.setVisibility(View.VISIBLE);
+        tvName.setText(greekName);
+        tvTitleNum.setVisibility(View.VISIBLE);
+        tvNum.setText(greekNumber + "");
     }
 
     /**
