@@ -2,6 +2,10 @@ package com.faintingdonkey.greekname;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.HashMap;
 
@@ -9,14 +13,30 @@ public class MainActivity extends AppCompatActivity {
 
     HashMap<String, String[]> alphabet = new HashMap<>();
     String name;
+    TextView tvName;
+    EditText etName;
+    Button btnGetName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        initView();
         initAlphabet();
-        translate();
+    }
+
+    private void initView() {
+        etName = (EditText) findViewById(R.id.et_name);
+        tvName = (TextView) findViewById(R.id.tv_greekname);
+        btnGetName = (Button) findViewById(R.id.btn_get_name);
+
+        btnGetName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     private void translate() {
