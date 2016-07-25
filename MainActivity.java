@@ -77,32 +77,32 @@ public class MainActivity extends AppCompatActivity {
      * dont judge this terrible code! Only God can judge my code. XD
      */
     private void initAlphabet() {
-        alphabet.put("a", new String[]{"α", "Α", ""});
-        alphabet.put("b", new String[]{"β", "Β", ""});
-        alphabet.put("c", new String[]{"χ", "Χ", ""});
-        alphabet.put("d", new String[]{"δ", "Δ", ""});
-        alphabet.put("e", new String[]{"ε", "Ε", ""});
-        alphabet.put("f", new String[]{"φ", "Φ", ""});
-        alphabet.put("g", new String[]{"γ", "Γ", ""});
-        alphabet.put("h", new String[]{"η", "Η", ""});
-        alphabet.put("i", new String[]{"ι", "Ι", ""});
-        alphabet.put("j", new String[]{"τζ", "TZ", ""});
-        alphabet.put("k", new String[]{"κ", "Κ", ""});
-        alphabet.put("l", new String[]{"λ", "Λ", ""});
-        alphabet.put("m", new String[]{"μ", "Μ", ""});
-        alphabet.put("n", new String[]{"ν", "Ν", ""});
-        alphabet.put("o", new String[]{"ο", "Ο", ""});
-        alphabet.put("p", new String[]{"π", "Π", ""});
-        alphabet.put("q", new String[]{"θ", "Θ", ""});
-        alphabet.put("r", new String[]{"ρ", "Ρ", ""});
-        alphabet.put("s", new String[]{"σ", "Σ", ""});
-        alphabet.put("t", new String[]{"τ", "Τ", ""});
-        alphabet.put("u", new String[]{"υ", "Υ", ""});
-        alphabet.put("v", new String[]{"β", "Β", ""});
-        alphabet.put("w", new String[]{"ω", "Ω", ""});
-        alphabet.put("x", new String[]{"ξ", "Ξ", ""});
-        alphabet.put("y", new String[]{"ψ", "Ψ", ""});
-        alphabet.put("z", new String[]{"ζ", "Ζ", ""});
+        alphabet.put("a", new String[]{"α", "Α", "1"});
+        alphabet.put("b", new String[]{"β", "Β", "2"});
+        alphabet.put("c", new String[]{"χ", "Χ", "600"});
+        alphabet.put("d", new String[]{"δ", "Δ", "4"});
+        alphabet.put("e", new String[]{"ε", "Ε", "5"});
+        alphabet.put("f", new String[]{"φ", "Φ", "500"});
+        alphabet.put("g", new String[]{"γ", "Γ", "3"});
+        alphabet.put("h", new String[]{"η", "Η", "8"});
+        alphabet.put("i", new String[]{"ι", "Ι", "10"});
+        alphabet.put("j", new String[]{"τζ", "TZ", "307"});
+        alphabet.put("k", new String[]{"κ", "Κ", "20"});
+        alphabet.put("l", new String[]{"λ", "Λ", "30"});
+        alphabet.put("m", new String[]{"μ", "Μ", "40"});
+        alphabet.put("n", new String[]{"ν", "Ν", "50"});
+        alphabet.put("o", new String[]{"ο", "Ο", "70"});
+        alphabet.put("p", new String[]{"π", "Π", "80"});
+        alphabet.put("q", new String[]{"θ", "Θ", "9"});
+        alphabet.put("r", new String[]{"ρ", "Ρ", "100"});
+        alphabet.put("s", new String[]{"σ", "Σ", "200"});
+        alphabet.put("t", new String[]{"τ", "Τ", "300"});
+        alphabet.put("u", new String[]{"υ", "Υ", "400"});
+        alphabet.put("v", new String[]{"β", "Β", "2"});
+        alphabet.put("w", new String[]{"ω", "Ω", "800"});
+        alphabet.put("x", new String[]{"ξ", "Ξ", "60"});
+        alphabet.put("y", new String[]{"ψ", "Ψ", "700"});
+        alphabet.put("z", new String[]{"ζ", "Ζ", "7"});
         alphabet.put("z", new String[]{" ", " ", "0"});
 
     }
