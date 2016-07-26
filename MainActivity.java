@@ -136,35 +136,29 @@ public class MainActivity extends AppCompatActivity {
 
     public void onDestroy() {
         super.onDestroy();
-        mPlayer.stop();
+        if(mPlayer.isPlaying()) mPlayer.stop();
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        mPlayer.stop();
+        if(mPlayer.isPlaying()) mPlayer.stop();
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        mPlayer.stop();
+        if(mPlayer.isPlaying()) mPlayer.stop();
     }
     @Override
     protected void onPause() {
         super.onPause();
-        mPlayer.stop();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mPlayer.stop();
+        if(mPlayer.isPlaying()) mPlayer.stop();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        mPlayer.stop();
+        if(mPlayer.isPlaying()) mPlayer.stop();
     }
 }
