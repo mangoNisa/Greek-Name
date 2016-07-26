@@ -1,9 +1,11 @@
 package com.faintingdonkey.greekname;
 
+import android.app.Activity;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -40,13 +42,15 @@ public class MainActivity extends AppCompatActivity {
         btnGetName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                hideKeyboard();
                 if(etName.getText().toString().equals("Jennifer Gargett")){
                     Toast.makeText(getApplicationContext(), "YO YO YO DIGGIE DE DIGGIE DAY, ALSO, TWINKLING MINT LEAF", Toast.LENGTH_LONG).show();
                 }else if(etName.getText().toString().equals("Waqar-un-nisa Nabi")){
                     Toast.makeText(getApplicationContext(), "I am the developer KINNNNNG", Toast.LENGTH_LONG).show();
                 }else if(etName.getText().toString().equals("Sexy Banana")){
                     Toast.makeText(getApplicationContext(), "Hey Sexy ;) you into bananas? I'll peel your skin off first.", Toast.LENGTH_LONG).show();
-                    MediaPlayer mPlayer = MediaPlayer.create(MainActivity.this, R.raw.banana);
+                    mPlayer = MediaPlayer.create(MainActivity.this, R.raw.banana);
+                    mPlayer.start();
                 }else if(etName.getText().toString().equals("Ryan Maloney")){
                     Toast.makeText(getApplicationContext(), "He is the african king", Toast.LENGTH_LONG).show();
                     mPlayer = MediaPlayer.create(MainActivity.this, R.raw.lion);
@@ -64,6 +68,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void hideKeyboard() {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+    }
+
     private void translate() {
         String greekName = "";
         int greekNumber = 0;
@@ -76,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             }
             if(Character.isSpaceChar(letter)){
                 greekName += " ";
-            }else {
+            }else if(Character.isLetter(letter)) {
                 String l = Character.toString(Character.toLowerCase(letter));
 
                 greekName += alphabet.get(l)[index];
@@ -126,13 +135,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onDestroy() {
-        mPlayer.stop();
         super.onDestroy();
+        mPlayer.stop();
     }
 
     @Override
     public void onBackPressed() {
-        mPlayer.stop();
         super.onBackPressed();
+        mPlayer.stop();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        mPlayer.stop();
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mPlayer.stop();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mPlayer.stop();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mPlayer.stop();
     }
 }
