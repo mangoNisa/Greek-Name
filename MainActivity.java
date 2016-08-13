@@ -47,18 +47,16 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "YO YO YO DIGGIE DE DIGGIE DAY, ALSO, TWINKLING MINT LEAF", Toast.LENGTH_LONG).show();
                 }else if(etName.getText().toString().equals("Waqar-un-nisa Nabi")){
                     Toast.makeText(getApplicationContext(), "I am the developer KINNNNNG", Toast.LENGTH_LONG).show();
-                }else if(etName.getText().toString().equals("Sexy Banana")){
-                    Toast.makeText(getApplicationContext(), "Hey Sexy ;) you into bananas? I'll peel your skin off first.", Toast.LENGTH_LONG).show();
+                }else if(etName.getText().toString().equals("banana") || etName.getText().toString().equals("Banana")){
+                    Toast.makeText(getApplicationContext(), "Wait for it..........", Toast.LENGTH_LONG).show();
                     mPlayer = MediaPlayer.create(MainActivity.this, R.raw.banana);
                     mPlayer.start();
                 }else if(etName.getText().toString().equals("Ryan Maloney")){
-                    Toast.makeText(getApplicationContext(), "He is the african king", Toast.LENGTH_LONG).show();
-                    mPlayer = MediaPlayer.create(MainActivity.this, R.raw.lion);
-                    mPlayer.start();
+                    Toast.makeText(getApplicationContext(), "The african king", Toast.LENGTH_LONG).show();
                 }else if(etName.getText().toString().equals("Gulan Insay")) {
-                    Toast.makeText(getApplicationContext(), "EGGGG: Glasgow is in ruins. This is a secret message. SAVE YOURSELF!1!>£3 >:(", Toast.LENGTH_LONG).show();
-                    mPlayer = MediaPlayer.create(MainActivity.this, R.raw.lion);
-                    mPlayer.start();
+                    Toast.makeText(getApplicationContext(), "Awriiiiight!", Toast.LENGTH_LONG).show();
+                }else if(etName.getText().toString().equals("Adam Mihalyi")) {
+                    Toast.makeText(getApplicationContext(), "Awriiiiight!", Toast.LENGTH_LONG).show();
                 }
 
                 name = etName.getText().toString();
@@ -131,34 +129,5 @@ public class MainActivity extends AppCompatActivity {
         alphabet.put("y", new String[]{"ψ", "Ψ", "700"});
         alphabet.put("z", new String[]{"ζ", "Ζ", "7"});
         alphabet.put("z", new String[]{" ", " ", "0"});
-
-    }
-
-    public void onDestroy() {
-        super.onDestroy();
-        if(mPlayer.isPlaying()) mPlayer.stop();
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        if(mPlayer.isPlaying()) mPlayer.stop();
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        if(mPlayer.isPlaying()) mPlayer.stop();
-    }
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if(mPlayer.isPlaying()) mPlayer.stop();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        if(mPlayer.isPlaying()) mPlayer.stop();
     }
 }
